@@ -1,122 +1,50 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import Skills from "./components/Skill";
+import Projects from "./components/Project";
+import Experience from "./components/Experience";
+import Contact from "./components/Contact";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    // กำหนดธีมสีมืด ความกว้างเต็มจอ และจัดองค์ประกอบเนื้อหาดิ่งลงมาตรงกลาง
+    <div className="w-full min-h-screen bg-[#0B1120] text-white flex flex-col items-center justify-start overflow-x-hidden font-sans">
+      
+      {/* เรียกใช้งาน Navbar ลอยด้านบน */}
+      <Navbar />
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+      {/* กล่องหลักคุมเนื้อหา ยิ่งใช้ gap-32 หรือ gap-40 จะยิ่งเพิ่มพื้นที่ว่างระหว่างคอมโพเนนต์ */}
+      <main className="w-full max-w-4xl flex flex-col items-center gap-40 mt-32 px-6 mb-40">
+        
+        {/* แต่ละ Component ใส่บล็อกครอบและดันพื้นที่ว่างบน-ล่าง (py-24) ไว้ให้ล่วงหน้า */}
+        <div className="w-full py-24 border border-white/5 bg-white/[0.01] rounded-2xl p-6 backdrop-blur-sm">
+          <Home />
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        <div className="w-full py-24 border border-white/5 bg-white/[0.01] rounded-2xl p-6 backdrop-blur-sm">
+          <About />
+        </div>
+
+        <div className="w-full py-24 border border-white/5 bg-white/[0.01] rounded-2xl p-6 backdrop-blur-sm">
+          <Skills />
+        </div>
+
+        <div className="w-full py-24 border border-white/5 bg-white/[0.01] rounded-2xl p-6 backdrop-blur-sm">
+          <Projects />
+        </div>
+
+        <div className="w-full py-24 border border-white/5 bg-white/[0.01] rounded-2xl p-6 backdrop-blur-sm">
+          <Experience />
+        </div>
+
+        <div className="w-full py-24 border border-white/5 bg-white/[0.01] rounded-2xl p-6 backdrop-blur-sm">
+          <Contact />
+        </div>
+
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
