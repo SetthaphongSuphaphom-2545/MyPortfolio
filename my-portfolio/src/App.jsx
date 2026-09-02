@@ -8,39 +8,26 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    // กำหนดธีมสีมืด ความกว้างเต็มจอ และจัดองค์ประกอบเนื้อหาดิ่งลงมาตรงกลาง
-    <div className="w-full min-h-screen bg-[#0B1120] text-white flex flex-col items-center justify-start overflow-x-hidden font-sans">
+    // จัด Container หลักสีเข้มมืด และตัดปัญหาส่วนล้นออกข้าง
+    <div className="w-full min-h-screen bg-[#0B1120] text-white flex flex-col items-center justify-start overflow-x-hidden font-sans relative">
       
+      {/* 🔮 เติม Ambient Glow (แสงฟุ้งฉากหลัง) ให้เว็บดูมีมิติเหมือนเพื่อนคุณ */}
+      <div className="absolute top-1/4 right-1/4 h-96 w-96 rounded-full bg-blue-500/10 blur-[120px] pointer-events-none z-0" />
+      <div className="absolute bottom-1/4 left-1/3 h-80 w-80 rounded-full bg-indigo-500/10 blur-[130px] pointer-events-none z-0" />
+
       {/* เรียกใช้งาน Navbar ลอยด้านบน */}
       <Navbar />
 
-      {/* กล่องหลักคุมเนื้อหา ยิ่งใช้ gap-32 หรือ gap-40 จะยิ่งเพิ่มพื้นที่ว่างระหว่างคอมโพเนนต์ */}
-      <main className="w-full max-w-4xl flex flex-col items-center gap-40 mt-32 px-6 mb-40">
+      {/* 🎯 จุดสำคัญ: ขยายความกว้างสูงสุดเป็น max-w-6xl และปรับ w-full md:w-11/12 เพื่อดันให้ยืดออกข้างเพิ่มขึ้นครับ */}
+      <main className="w-full md:w-11/12 max-w-6xl flex flex-col items-center gap-24 mt-32 px-4 sm:px-6 mb-40 z-10">
         
-        {/* แต่ละ Component ใส่บล็อกครอบและดันพื้นที่ว่างบน-ล่าง (py-24) ไว้ให้ล่วงหน้า */}
-        <div className="w-full py-24 border border-white/5 bg-white/[0.01] rounded-2xl p-6 backdrop-blur-sm">
-          <Home />
-        </div>
-
-        <div className="w-full py-24 border border-white/5 bg-white/[0.01] rounded-2xl p-6 backdrop-blur-sm">
-          <About />
-        </div>
-
-        <div className="w-full py-24 border border-white/5 bg-white/[0.01] rounded-2xl p-6 backdrop-blur-sm">
-          <Skills />
-        </div>
-
-        <div className="w-full py-24 border border-white/5 bg-white/[0.01] rounded-2xl p-6 backdrop-blur-sm">
-          <Projects />
-        </div>
-
-        <div className="w-full py-24 border border-white/5 bg-white/[0.01] rounded-2xl p-6 backdrop-blur-sm">
-          <Experience />
-        </div>
-
-        <div className="w-full py-24 border border-white/5 bg-white/[0.01] rounded-2xl p-6 backdrop-blur-sm">
-          <Contact />
-        </div>
+        {/* 💡 ถอดกล่อง div ครอบตัวเกู่ออก เพื่อปล่อยให้คลาสกระจกฝ้าในไฟล์ลูกทำงานและกางขนาดได้เต็มที่ร้อยเปอร์เซ็นต์ */}
+        <Home />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
 
       </main>
     </div>
