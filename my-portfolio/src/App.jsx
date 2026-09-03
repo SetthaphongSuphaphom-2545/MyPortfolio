@@ -19,7 +19,7 @@ function App() {
       <Navbar />
 
       {/* 🎯 จุดสำคัญ: ขยายความกว้างสูงสุดเป็น max-w-6xl และปรับ w-full md:w-11/12 เพื่อดันให้ยืดออกข้างเพิ่มขึ้นครับ */}
-      <main className="w-full md:w-11/12 max-w-6xl flex flex-col items-center gap-24 mt-32 px-4 sm:px-6 mb-40 z-10">
+      <main className="w-full md:w-11/12 max-w-6xl flex flex-col items-center gap-24 mt-32 px-4 sm:px-6 mb-0 z-10">
         
         {/* 💡 ถอดกล่อง div ครอบตัวเกู่ออก เพื่อปล่อยให้คลาสกระจกฝ้าในไฟล์ลูกทำงานและกางขนาดได้เต็มที่ร้อยเปอร์เซ็นต์ */}
         <Home />
